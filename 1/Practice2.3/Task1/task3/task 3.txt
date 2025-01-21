@@ -1,0 +1,31 @@
+function createGoogleForm() {
+  // Створення нової Google Форми
+  var form = FormApp.create('Форма для збору даних');
+
+  // Додавання поля для введення імені
+  form.addTextItem()
+      .setTitle('Ім\'я')
+      .setRequired(true);
+
+  // Додавання поля для вибору дати
+  form.addDateItem()
+      .setTitle('Дата')
+      .setRequired(true);
+
+  // Додавання поля для вибору відділу
+  form.addMultipleChoiceItem()
+      .setTitle('Відділ')
+      .setChoiceValues(['Відділ A', 'Відділ B', 'Відділ C'])
+      .setRequired(true);
+
+  // Отримання URL для доступу до форми
+  var formUrl = form.getPublishedUrl();
+  Logger.log('Форма створена за URL: ' + formUrl);
+
+
+
+  https://docs.google.com/forms/d/e/1FAIpQLSdo0xnh2AWwo7Xx4YoSaDiP4DyWNCXfKtKsderKBmJ25RlPhQ/viewform
+
+
+  https://forms.gle/tA9ZkjyVAx9vy6QC8
+  
