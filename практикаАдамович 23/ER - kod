@@ -1,0 +1,39 @@
+@startuml
+entity "Операції" as Operation {
+    +ID: int
+    +Назва: string
+    +Дата початку: date
+    +Дата завершення: date
+}
+
+entity "Цілі" as Target {
+    +ID: int
+    +Назва: string
+    +Опис: string
+    +Пріоритет: int
+}
+
+entity "Ресурси" as Resource {
+    +ID: int
+    +Назва: string
+    +Тип: string
+    +Кількість: int
+}
+
+entity "Операція_Ціль" as OperationTarget {
+    +Операція_ID: int
+    +Ціль_ID: int
+}
+
+entity "Операція_Ресурс" as OperationResource {
+    +Операція_ID: int
+    +Ресурс_ID: int
+    +Кількість_використання: int
+}
+
+Operation ||--o{ OperationTarget : "Має"
+Target ||--o{ OperationTarget : "Включає"
+
+Operation ||--o{ OperationResource : "Потребує"
+Resource ||--o{ OperationResource : "Забезпечує"
+@enduml
